@@ -1,0 +1,286 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #2ef6b0, #009688);
+  color: #333;
+  margin: 0;
+}
+
+header {
+  background-color: #000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 100px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 40px; 
+  text-align: center;
+  width: 100%; 
+}
+
+#filters {
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 62%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#filters h2 {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 35px;
+  color: #009688;
+  margin-bottom: 20px;
+}
+
+#filters form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+#noApartmentsMessage {
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  margin-bottom: 500px;
+}
+
+select,
+input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #009688;
+}
+
+#results {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+  margin: 0 auto;
+}
+
+#results li {
+  background-color: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+}
+
+#results h2 {
+  color: #333;
+}
+
+#results a {
+  text-decoration: none;
+  color: #333;
+}
+
+#results p {
+  margin: 5px 0;
+}
+
+#results a:hover {
+  color: #009688;
+}
+
+.filter-group {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+#filters input[name="price_min"],
+#filters input[name="price_max"],
+#filters input[name="area_min"],
+#filters input[name="area_max"] {
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+.footer-text {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.footer-text p {
+  margin: 0;
+}
+
+.footer-text ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-text li {
+  margin-bottom: 10px;
+}
+
+.social-icons {
+  display: flex;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: #fff;
+}
+.social-icons-youtube {
+ margin-top: 4px;
+}
+
+.social-icons img {
+  width: 30px; 
+  height: auto;
+}
+
+.footer-bottom {
+  text-align: center;
+}
+
+.apartment-gallery img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.slick-next, .slick-prev {
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.slick-prev {
+  left: 3px;
+}
+
+.slick-next {
+  right: 3px;
+}
+.apartment-gallery img {
+  width: 100%; 
+  height: auto;
+}
+.apartment-gallery {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: flex-start; 
+  margin-top: 10px;
+  overflow: auto;
+  transition: transform 0.5s ease; 
+}
+
+.thumbnails img {
+  width: 70px;
+  height: 50px;
+  margin-right: 5px; 
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.thumbnails img.active {
+  border: 3px solid #009688; 
+}
+.apartment-item-text-container {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.apartment-item-text-container:hover {
+  color: #009688; 
+}
+.apartment-item-text-container-2 {
+  cursor: pointer;
+  transition: color 0.3s; 
+}
+
+.apartment-item-text-container-2:hover {
+  color: #009688; 
+}
+
+.apartment-item-text-container-3 {
+  cursor: pointer;
+  transition: color 0.3s; 
+}
+
+.apartment-item-text-container-3:hover {
+  color: #009688; 
+}
+
+.apartment-item-text-container-4 {
+  cursor: pointer;
+  transition: color 0.3s; 
+}
+
+.apartment-item-text-container-4:hover {
+  color: #009688; 
+}

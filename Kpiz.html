@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Квартири в Тернополі</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    // Додаємо функцію для обробки кліку на фотографії
+    function goToPage() {
+      window.location.href = 'kpiz.html'; // Замініть 'kpiz.html' на вашу бажану сторінку
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="11zon_cropped.png" alt="Назва логотипу" onclick="goToPage()">
+        </div>
+        <div class="header-text">
+          <h1>  Оренда квартир у Тернополі</h1>
+        </div>
+      </header>
+    <section id="filters">
+      <form id="filterForm" action="#">
+          <input type="number" id="price_min" name="price_min" placeholder="Ціна від" min="0" max="4000">
+          <input type="number" id="price_max" name="price_max" placeholder="Ціна до" min="0" max="4000">
+          <input type="number" id="area_min" name="area_min" placeholder="Площа від" min="1" max="200">
+          <input type="number" id="area_max" name="area_max" placeholder="Площа до" min="1" max="200">
+      <div class="filter-group">
+        <label for="district"></label>
+        <select name="district" id="district">
+          <option value="all">Всі райони</option>
+          <option value="skhidnyi">Східний</option>
+          <option value="bam">Бам</option>
+          <option value="druzhba">Дружба</option>
+          <option value="novyi_svit">Новий світ</option>
+          <option value="centr">Центр</option>
+        </select>
+      </div>
+      
+      <div class="filter-group">
+        <label for="room_count"></label>
+        <select name="room_count" id="room_count">
+          <option value="all">Кількість кімнат</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4+">4+</option>
+        </select>
+      </div>
+      <input type="submit" value="Фільтрувати">
+    </form>
+  </section>
+  <section id="results">
+    <ul>
+      <li class="apartment-item" data-district="centr">
+        <div class="apartment-gallery apartment-gallery-1" id="gallery-1">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/99/68/9968e2784001f950605522ac808abaa7.jpg" alt="Фото 1">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/d7/c4/d7c4782a744d141b3f22529144bcef9f.jpg" alt="Фото 2">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a1/30/a130300753449eaa0ce6f79f1fac8d49.jpg" alt="Фото 3">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a5/cc/a5ccd5f4b8989a23a59b595cf08c6a37.jpg" alt="Фото 4">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/1e/e6/1ee6613df24a69b47104999d0f7bcc65.jpg" alt="Фото 5">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/34/71/34713f2486a72fac6bdd81772e4330b1.jpg" alt="Фото 6">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/ce/06/ce06215bcf1c3c26d84c82327b5df9b0.jpg" alt="Фото 7">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/cd/c9/cdc98f659f09cb61642e08205b3c050f.jpg" alt="Фото 8">
+      </div>
+      <div class="thumbnails" data-gallery="1">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/99/68/9968e2784001f950605522ac808abaa7.jpg" alt="Thumbnail 1" data-index="0" onclick="goToSlide(this)">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/d7/c4/d7c4782a744d141b3f22529144bcef9f.jpg" alt="Thumbnail 2" data-index="1" onclick="goToSlide(this)">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a1/30/a130300753449eaa0ce6f79f1fac8d49.jpg" alt="Thumbnail 3" data-index="2" onclick="goToSlide(this)">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a5/cc/a5ccd5f4b8989a23a59b595cf08c6a37.jpg" alt="Thumbnail 4" data-index="3" onclick="goToSlide(this)">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/1e/e6/1ee6613df24a69b47104999d0f7bcc65.jpg" alt="Thumbnail 5" data-index="4" onclick="goToSlide(this)">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/34/71/34713f2486a72fac6bdd81772e4330b1.jpg" alt="Thumbnail 6" data-index="5" onclick="goToSlide(this)">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/ce/06/ce06215bcf1c3c26d84c82327b5df9b0.jpg" alt="Thumbnail 7" data-index="6" onclick="goToSlide(this)">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/cd/c9/cdc98f659f09cb61642e08205b3c050f.jpg" alt="Thumbnail 8" data-index="7" onclick="goToSlide(this)">
+      </div> 
+      <div class="apartment-item-text-container">    
+        <p style="font-size: 30px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">Квартира у районі "Центр"</p>
+          <p>Адреса: вул. Руська, 1</p>
+          <p>Ціна: 1000 грн/добу</p>
+          <p>Кількість кімнат: 2</p>
+          <p>Площа: 50 м²</p>
+        </div>
+        
+      </li>
+      <li data-district="bam">
+        <div class="apartment-gallery apartment-gallery-2" id="gallery-2">
+          <img src="https://www.real-estate.lviv.ua/img/objects/800x600/90/05/90055682b7c04ece5af5c13a4cf3c3e0.jpg" alt="Фото 1">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a7/53/a753e542ac637f66edaa27f6633b426a.jpg" alt="Фото 2">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/b9/dd/b9dda2df5c02641cebbf419f73d76c33.jpg" alt="Фото 3">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a0/91/a0911323306e7341c456f96487ae0980.jpg" alt="Фото 4">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/de/21/de21a74682a622e52759fb9e089482ab.jpg" alt="Фото 5">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/9f/c0/9fc050f58e44f59b88a36f900497efe7.jpg" alt="Фото 6">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/d4/59/d459896b5d44eca4067dc4441c2118f9.jpg" alt="Фото 7">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/b7/e7/b7e77d2e056e79b7b1486d3543946894.jpg" alt="Фото 8">
+          </div>
+          <div class="thumbnails" data-gallery="2">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/90/05/90055682b7c04ece5af5c13a4cf3c3e0.jpg" alt="Thumbnail 1" data-index="0" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a7/53/a753e542ac637f66edaa27f6633b426a.jpg" alt="Thumbnail 2" data-index="1" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/b9/dd/b9dda2df5c02641cebbf419f73d76c33.jpg" alt="Thumbnail 3" data-index="2" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/a0/91/a0911323306e7341c456f96487ae0980.jpg" alt="Thumbnail 4" data-index="3" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/de/21/de21a74682a622e52759fb9e089482ab.jpg" alt="Thumbnail 5" data-index="4" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/9f/c0/9fc050f58e44f59b88a36f900497efe7.jpg" alt="Thumbnail 6" data-index="5" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/d4/59/d459896b5d44eca4067dc4441c2118f9.jpg" alt="Thumbnail 7" data-index="6" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/b7/e7/b7e77d2e056e79b7b1486d3543946894.jpg" alt="Thumbnail 8" data-index="7" onclick="goToSlide(this)">
+        </div>
+        <div class="apartment-item-text-container-2">
+          <p style="font-size: 30px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">Квартира у районі "Бам"</p>
+          <p>Адреса: вул. Київська, 12</p>
+          <p>Ціна: 700 грн/добу</p>
+          <p>Кількість кімнат: 3</p>
+          <p>Площа: 80 м²</p>
+        </div>
+      </div>
+      </li>
+      <li data-district="druzhba">
+        <div>
+          <div class="apartment-gallery apartment-gallery-3" id="gallery-3">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/3c/a9/3ca900b3aad063db78e8b3cb48b6f3d4.jpg" alt="Фото 1">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/ca/7f/ca7f7a64d692ff6bbb992dfad5bd973e.jpg" alt="Фото 2">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/05/72/057242ab31ed46765f90e8f63173e5b1.jpg" alt="Фото 3">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/5e/32/5e32be4443b721ec96f684f9dc8f3b80.jpg" alt="Фото 4">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/b5/fc/b5fcbad8dc93aa5d48c1c3501da86c43.jpg" alt="Фото 5">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/6f/b0/6fb0d5eaece93b91c8365f8494cf7c70.jpg" alt="Фото 6">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/9a/8d/9a8d4ab3b106fa72abe1da129eecdd73.jpg" alt="Фото 7">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/6f/83/6f833514a0994ddaa62f0a3e0e0fb6cc.jpg" alt="Фото 8">
+          </div>
+          <div class="thumbnails" data-gallery="3">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/3c/a9/3ca900b3aad063db78e8b3cb48b6f3d4.jpg" alt="Thumbnail 1" data-index="0">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/ca/7f/ca7f7a64d692ff6bbb992dfad5bd973e.jpg" alt="Thumbnail 2" data-index="1">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/05/72/057242ab31ed46765f90e8f63173e5b1.jpg" alt="Thumbnail 3" data-index="2">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/5e/32/5e32be4443b721ec96f684f9dc8f3b80.jpg" alt="Thumbnail 4" data-index="3">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/b5/fc/b5fcbad8dc93aa5d48c1c3501da86c43.jpg" alt="Thumbnail 5" data-index="4">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/6f/b0/6fb0d5eaece93b91c8365f8494cf7c70.jpg" alt="Thumbnail 6" data-index="5">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/9a/8d/9a8d4ab3b106fa72abe1da129eecdd73.jpg" alt="Thumbnail 7" data-index="6">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/6f/83/6f833514a0994ddaa62f0a3e0e0fb6cc.jpg" alt="Thumbnail 8" data-index="7">
+          </div>
+        <div class="apartment-item-text-container-3">
+          <p style="font-size: 30px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">Квартира у районі "Дружба"</p>
+          <p>Адреса: Цегельний провулок,1Д</p>
+          <p>Ціна: 900 грн/добу</p>
+          <p>Кількість кімнат: 1</p>
+          <p>Площа: 40 м²</p>
+        </div>
+      </div>
+      </li>
+      <li data-district="novyi_svit">
+        <div>
+          <div class="apartment-gallery apartment-gallery-4" id="gallery-4">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/da/8c/da8c5e53d11727e65158e1bf85827a74.jpg" alt="Фото 1">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/80/86/8086acc321c0111d2775d2147e621597.jpg" alt="Фото 2">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/34/ff/34ffefadc8c19e5d9048d128bb3ddf6e.jpg" alt="Фото 3">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/0f/dd/0fddfd4615e106775aaf1f02ca85ee5a.jpg" alt="Фото 4">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/80/1e/801e2757f8a67ae8bb12f701219d1011.jpg" alt="Фото 5">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/08/28/0828e87a03a4034a8592b994137e564b.jpg" alt="Фото 6">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/84/46/8446f5b8e41d70e843b8125a69080a2d.jpg" alt="Фото 7">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/c7/89/c78908f9f5db6fcfdd82366aa02a4cb0.jpg" alt="Фото 8">
+          </div>
+          <div class="thumbnails" data-gallery="4">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/da/8c/da8c5e53d11727e65158e1bf85827a74.jpg" alt="Thumbnail 1" data-index="0" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/80/86/8086acc321c0111d2775d2147e621597.jpg" alt="Thumbnail 2" data-index="1" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/34/ff/34ffefadc8c19e5d9048d128bb3ddf6e.jpg" alt="Thumbnail 3" data-index="2" onclick="goToSlide(this)">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/0f/dd/0fddfd4615e106775aaf1f02ca85ee5a.jpg" alt="Thumbnail 4" data-index="3">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/80/1e/801e2757f8a67ae8bb12f701219d1011.jpg" alt="Thumbnail 5" data-index="4">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/08/28/0828e87a03a4034a8592b994137e564b.jpg" alt="Thumbnail 6" data-index="5">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/84/46/8446f5b8e41d70e843b8125a69080a2d.jpg" alt="Thumbnail 7" data-index="6">
+            <img src="https://www.real-estate.lviv.ua/img/objects/800x600/c7/89/c78908f9f5db6fcfdd82366aa02a4cb0.jpg" alt="Thumbnail 8" data-index="7">
+        </div>
+        <div class="apartment-item-text-container-4">
+          <p style="font-size: 30px; font-weight: bold; margin-top: 10px; margin-bottom: 10px;">Квартира у районі "Новий світ"</p>
+          <p>Адреса: вул. Олени Теліги,14</p>
+          <p>Ціна: 1200 грн/добу</p>
+          <p>Кількість кімнат: 4</p>
+          <p>Площа: 100 м²</p>
+        </div>
+      </div>
+      </li>
+    </ul>
+  </section>
+  <div id="noApartmentsMessage" style="display: none; color: rgb(255, 255, 255)(214, 214, 214);">
+    <p>Квартир не знайдено</p>
+</div>
+
+<footer>
+    <div class="footer-text">
+      <p>Гаряча лінія:</p>
+      <ul>
+        <li>+380 974373757</li>
+        <li>+380 975432447</li>
+        <li>+380 678559923</li>
+      </ul>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/redmikss/" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Instagram_logo.png/1024px-Instagram_logo.png" alt="Іконка Instagram">
+        </a>
+        <div class ="social-icons-youtube">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley" target="_blank" rel="noopener noreferrer">
+          <img src="https://icon-library.com/images/youtube-icon-outline/youtube-icon-outline-7.jpg" alt="Іконка Youtube">
+        </a>
+      </div>
+      </div>
+      <footer class="footer-bottom">
+        © 2023 Rent Ternopil. All Rights Reserved.
+      </footer>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.apartment-gallery').each(function() {
+          $(this).slick({
+              dots: false,
+              infinite: true,
+              speed: 300,
+              slidesToShow: 1,
+              adaptiveHeight: true,
+              responsive: [
+                  {
+                      breakpoint: 768,
+                      settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1,
+                          infinite: true,
+                      }
+                  },
+                  {
+                      breakpoint: 480,
+                      settings: {
+                          slidesToShow: 1,
+                          slidesToScroll: 1
+                      }
+                  }
+              ]
+          });
+      });
+      $(document).ready(function () {
+        $('.apartment-gallery').each(function () {
+          initializeGallery($(this));
+        });
+      
+        function initializeGallery(gallery) {
+          gallery.on('init', function (event, slick) {
+            var firstThumbnail = gallery.closest('li').find('.thumbnails img:first');
+            goToSlide(gallery, firstThumbnail[0]);
+          });
+      
+          gallery.on('afterChange', function (event, slick, currentSlide) {
+            var thumbnail = gallery.closest('li').find('.thumbnails img[data-index="' + currentSlide + '"]');
+            gallery.closest('li').find('.thumbnails img').removeClass('active');
+            thumbnail.addClass('active');
+          });
+      
+          gallery.slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 1,
+            adaptiveHeight: true,
+          });
+      
+          gallery.closest('li').find('.thumbnails img').on('click', function () {
+            var index = parseInt($(this).attr("data-index"));
+            gallery.slick('slickGoTo', index);
+          });
+      
+          gallery.find('.thumbnails img').on('click', function () {
+            goToSlide(gallery, this);
+          });
+        }
+      
+        function goToSlide(gallery, thumbnail) {
+          var index = parseInt($(thumbnail).attr("data-index"));
+          gallery.slick('slickGoTo', index);
+          gallery.closest('li').find('.thumbnails img').removeClass('active');
+          $(thumbnail).addClass('active');
+        }
+      });
+      
+    });          
+  </script>
+  <script>
+    $(document).ready(function () {
+      initializeGallery('.apartment-gallery-2');
+    
+    
+      $(window).on('load', function () {
+        var firstThumbnail = $('.apartment-gallery-2').closest('li').find('.thumbnails img:first');
+        goToSlide($('.apartment-gallery-2'), firstThumbnail[0]);
+      });
+    
+      $('.apartment-gallery-2 .thumbnails img').on('click', function () {
+        goToSlide($('.apartment-gallery-2'), this);
+      });
+    });
+  
+    function initializeGallery(gallerySelector) {
+      var gallery = $(gallerySelector);
+    
+      gallery.on('init', function (event, slick) {
+        var firstThumbnail = gallery.closest('li').find('.thumbnails img:first');
+        goToSlide(gallery, firstThumbnail[0]);
+      });
+    
+      gallery.on('afterChange', function (event, slick, currentSlide) {
+        var thumbnail = gallery.closest('li').find('.thumbnails img[data-index="' + currentSlide + '"]');
+        gallery.closest('li').find('.thumbnails img').removeClass('active');
+        thumbnail.addClass('active');
+      });
+    
+      gallery.slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+      });
+    
+      // обробник подій для кліку на мініатюру
+      gallery.closest('li').find('.thumbnails img').on('click', function () {
+        goToSlide(gallery, this);
+      });
+    }
+    
+    // Функція для переходу до конкретного слайду
+    function goToSlide(gallery, thumbnail) {
+      var index = parseInt(thumbnail.getAttribute("data-index"));
+      gallery.slick('slickGoTo', index);
+      gallery.closest('li').find('.thumbnails img').removeClass('active');
+      $(thumbnail).addClass('active');
+    }
+    $('.thumbnails img').on('click', function () {
+      var galleryIndex = $(this).closest('.thumbnails').data('gallery');
+      var gallerySelector = '.apartment-gallery-' + galleryIndex;
+      goToSlide($(gallerySelector), this);
+    });
+    
+  </script>
+  <script>
+    $(document).ready(function () {
+      initializeGallery('.apartment-gallery-3');
+    
+      $(window).on('load', function () {
+        var firstThumbnail = $('.apartment-gallery-3').closest('li').find('.thumbnails img:first');
+        goToSlide($('.apartment-gallery-3'), firstThumbnail[0]);
+      });
+    
+      $('.apartment-gallery-3 .thumbnails img').on('click', function () {
+        goToSlide($('.apartment-gallery-3'), this);
+      });
+    });
+  
+    function initializeGallery(gallerySelector) {
+      var gallery = $(gallerySelector);  
+    
+      gallery.on('init', function (event, slick) {
+        var firstThumbnail = gallery.closest('li').find('.thumbnails img:first');
+        goToSlide(gallery, firstThumbnail[0]);
+      });
+    
+      gallery.on('afterChange', function (event, slick, currentSlide) {
+        var thumbnail = gallery.closest('li').find('.thumbnails img[data-index="' + currentSlide + '"]');
+        gallery.closest('li').find('.thumbnails img').removeClass('active');
+        thumbnail.addClass('active');
+      });
+    
+      gallery.slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+      });
+    
+      gallery.closest('li').find('.thumbnails img').on('click', function () {
+        goToSlide(gallery, this);
+      });
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      initializeGallery('.apartment-gallery-4');
+    
+    
+      $(window).on('load', function () {
+        var firstThumbnail = $('.apartment-gallery-4').closest('li').find('.thumbnails img:first');
+        goToSlide($('.apartment-gallery-4'), firstThumbnail[0]);
+      });
+  
+      $('.apartment-gallery-4 .thumbnails img').on('click', function () {
+        goToSlide($('.apartment-gallery-4'), this);
+      });
+    });
+  
+    function initializeGallery(gallerySelector) {
+      var gallery = $(gallerySelector);
+    
+      gallery.on('init', function (event, slick) {
+        var firstThumbnail = gallery.closest('li').find('.thumbnails img:first');
+        goToSlide(gallery, firstThumbnail[0]);
+      });
+    
+      gallery.on('afterChange', function (event, slick, currentSlide) {
+        var thumbnail = gallery.closest('li').find('.thumbnails img[data-index="' + currentSlide + '"]');
+        gallery.closest('li').find('.thumbnails img').removeClass('active');
+        thumbnail.addClass('active');
+      });
+    
+      gallery.slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+      });
+    
+      gallery.closest('li').find('.thumbnails img').on('click', function () {
+        goToSlide(gallery, this);
+      });
+    }
+  </script>
+  <script>
+    $(document).ready(function () {
+      $('#filterForm').on('submit', function (event) {
+          event.preventDefault(); 
+
+          var minPrice = parseInt($('#price_min').val()) || 0;
+          var maxPrice = parseInt($('#price_max').val()) || 4000;
+          var minArea = parseInt($('#area_min').val()) || 0;
+          var maxArea = parseInt($('#area_max').val()) || 200;
+          var selectedDistrict = $('#district').val();
+          var selectedRoomCount = $('#room_count').val();
+
+          filterApartments(minPrice, maxPrice, minArea, maxArea, selectedDistrict, selectedRoomCount);
+      });
+  });
+
+  function filterApartments(minPrice, maxPrice, minArea, maxArea, selectedDistrict, selectedRoomCount) {
+    var apartmentsFound = false; 
+  
+    $('#results li').each(function () {
+      var apartmentPrice = parseInt($(this).find('p:contains("Ціна:")').text().replace('Ціна: ', '').replace(' грн/добу', ''), 10);
+      var apartmentArea = parseInt($(this).find('p:contains("Площа:")').text().replace('Площа: ', '').replace(' м²', ''), 10);
+      var apartmentDistrict = $(this).data('district');
+  
+      var priceInRange = apartmentPrice >= minPrice && apartmentPrice <= maxPrice;
+      var areaInRange = apartmentArea >= minArea && apartmentArea <= maxArea;
+      var districtMatches = selectedDistrict === 'all' || apartmentDistrict === selectedDistrict;
+      var roomCountMatches = selectedRoomCount === 'all' || parseInt($(this).find('p:contains("Кількість кімнат:")').text().replace('Кількість кімнат: ', ''), 10) === parseInt(selectedRoomCount);
+  
+      if (priceInRange && areaInRange && districtMatches && roomCountMatches) {
+        $(this).show();
+        apartmentsFound = true;
+      } else {
+        $(this).hide();
+      }
+    });
+
+    if (!apartmentsFound) {
+      $('#noApartmentsMessage').show();
+    } else {
+      $('#noApartmentsMessage').hide();
+    }
+  }
+  
+  $(document).ready(function () {
+    $('.apartment-item-text-container').click(function () {
+      window.location.href = 'apart1.html'; 
+    });
+  });
+  $(document).ready(function () {
+    $('.apartment-item-text-container-2').click(function () {
+      window.location.href = 'apart2.html';
+    });
+  });
+  $(document).ready(function () {
+    $('.apartment-item-text-container-3').click(function () {
+      window.location.href = 'apart3.html'; 
+    });
+  });
+  $(document).ready(function () {
+    $('.apartment-item-text-container-4').click(function () {
+      window.location.href = 'apart4.html';
+    });
+  });
+  </script>
+</body>
+</html>
